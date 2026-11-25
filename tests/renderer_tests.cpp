@@ -564,8 +564,8 @@ private slots:
         if (QGuiApplication::platformName() == "offscreen") QSKIP("Requires accelerated desktop.");
         QFETCH(int, kind);
         QFETCH(int, moment);
-        const bool small = qEnvironmentVariableIsSet("TE_SCENE_SMALL");
-        const QSize size = small ? QSize(560, 360) : QSize(1000, 640);
+        const bool lesser = qEnvironmentVariableIsSet("TE_SCENE_SMALL");
+        const QSize size = lesser ? QSize(560, 360) : QSize(1000, 640);
         te::EffectConfig config;
         config.kind = te::EffectKind(kind);
         config.ambientIntensity = 1;
