@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="170" viewBox="0 0 240 170">
+  <!-- The autumn bough profile, laid diagonally from this corner. -->
+  <g transform="matrix(-.13 -.80 .90 .34 14.3 88)">
+    <path fill="#674332" d="M113 1 C93 32 109 57 86 90 Q78 102 78 122 C80 150 62 171 58 191 Q54 215 34 243 Q49 217 54 189 C56 165 73 148 72 122 Q70 101 82 86 C99 61 88 34 105 0Z"/>
+    <path fill="#aa7951" d="M106 7 Q94 31 96 50 Q99 69 85 88 Q101 70 100 47 Q98 28 106 7Z M75 123 Q79 143 65 167 Q76 143 75 123Z"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#79513b">
+      <path stroke-width="3.6" d="M44 26C57 29 61 24 78 26C99 24 108 27 120 18"/>
+      <path stroke-width="1.5" d="M75 27C87 31 93 43 107 43M96 25C106 23 111 14 119 12"/>
+      <path stroke-width="3" d="M82 50C86 72 81 89 71 109C66 118 67 126 71 132"/>
+      <path stroke-width="1.6" d="M74 103C84 106 92 112 96 122M71 113C65 111 63 108 57 111"/>
+      <path stroke-width="3.1" d="M110 67C123 63 134 66 147 68C163 70 173 62 186 64C198 65 201 61 207 57"/>
+      <path stroke-width="1.7" d="M148 68C147 57 149 50 161 40M166 66C172 70 172 78 180 80M191 64C197 71 206 75 214 73"/>
+      <path stroke-width="2.6" d="M139 84C147 104 138 119 133 127C131 133 132 138 128 144"/>
+      <path stroke-width="1.6" d="M133 127C145 128 154 136 160 143M137 116C131 113 125 112 119 114"/>
+      <path stroke-width="2.1" d="M175 105C181 99 199 100 208 94C217 88 222 92 229 87"/>
+      <path stroke-width="1.2" d="M211 94L219 106M188 117C183 121 187 133 182 137M200 126Q211 119 218 119"/>
+    </g>
+  </g>
+</svg>

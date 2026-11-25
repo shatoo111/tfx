@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="36" viewBox="0 0 192 36">
+<defs>
+  <radialGradient id="mist"><stop stop-color="#e5f3ff" stop-opacity=".55"/><stop offset=".32" stop-color="#c4deff" stop-opacity=".30"/><stop offset=".68" stop-color="#b0d3f4" stop-opacity=".09"/><stop offset="1" stop-color="#a4d2f5" stop-opacity="0"/></radialGradient>
+  <radialGradient id="silver"><stop stop-color="#fffefa"/><stop offset=".32" stop-color="#f7fbff" stop-opacity=".82"/><stop offset="1" stop-color="#d9f0ff" stop-opacity="0"/></radialGradient>
+</defs>
+<!-- Multiple overlapping soft lobes narrow into an almost invisible dust trail. -->
+<ellipse cx="94" cy="18" rx="93" ry="2.4" fill="url(#mist)"/>
+<ellipse cx="114" cy="18" rx="73" ry="2.65" fill="url(#silver)" opacity=".53"/>
+<ellipse cx="141" cy="18" rx="47" ry="4.3" fill="url(#mist)"/>
+<ellipse cx="162" cy="18" rx="28" ry="5.4" fill="url(#silver)" opacity=".86"/>
+<ellipse cx="174" cy="18" rx="17" ry="9.5" fill="url(#mist)"/>
+<ellipse cx="178" cy="18" rx="10" ry="4.1" fill="url(#silver)"/>
+</svg>

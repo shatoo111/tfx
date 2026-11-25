@@ -1,0 +1,7 @@
+/build*/
+/dist/
+/.tools/
+/.cache/
+.DS_Store
+*.user
+*.dmp

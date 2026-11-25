@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<defs><radialGradient id="light"><stop stop-color="#ffffff"/><stop offset=".2" stop-color="#eefcff"/><stop offset=".53" stop-color="#9cddff" stop-opacity=".83"/><stop offset="1" stop-color="#56b6f7" stop-opacity=".05"/></radialGradient></defs>
+<path d="M32 0 Q33 25 35 28 L45 19 37 30 Q42 31.7 64 32 Q40 33 36 35 L45 45 34 37 Q32.5 42 32 64 Q31.3 40 29 36 L19 46 27 34 Q19 32.5 0 32 Q25 31 28 29 L18 18 30 27 Q31.7 21 32 0Z" fill="url(#light)"/>
+<path d="M32 16 Q32.8 30 35 31 L47 32 Q34 32.8 33 35 L32 49 Q31 34 29 33 L16 32 Q30 31 31 29Z" fill="#fcffff"/>
+</svg>
