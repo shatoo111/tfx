@@ -1,0 +1,65 @@
+# Builds the packages on GitHub's machines and signs a record of which commit they came from.
+name: build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2022
+            arch: win64_msvc2022_64
+          - os: macos-15
+            arch: clang_64
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    env:
+      TFX_PREVIEW_BUILD: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.3'
+          arch: ${{ matrix.arch }}
+          modules: qtshadertools
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: runner.os == 'Windows'
+      - if: runner.os == 'Windows'
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      - if: runner.os == 'macOS'
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=13.0 '-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64'
+      - run: cmake --build build --parallel
+      - run: ctest --test-dir build --output-on-failure
+      - run: cmake --install build --prefix "${{ github.workspace }}/dist"
+      - name: Package Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Move-Item -LiteralPath './dist/tfx.exe' -Destination './dist/bin/tfx.exe'
+          Copy-Item LICENSE.md ./dist/
+          Compress-Archive -Path dist/* -DestinationPath TFX-windows-x64.zip
+      - name: Package macOS
+        if: runner.os == 'macOS'
+        run: bash packaging/macos/package.sh dist/TFX.app TFX-macos.zip universal
+      - name: SHA-256
+        shell: bash
+        run: |
+          { echo '```'; sha256sum TFX-*.zip 2>/dev/null || shasum -a 256 TFX-*.zip; echo '```'; } | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: TFX-*.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TFX-${{ runner.os }}
+          path: TFX-*.zip
+          if-no-files-found: error
